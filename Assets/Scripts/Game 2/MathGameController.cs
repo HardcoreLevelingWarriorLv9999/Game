@@ -40,12 +40,16 @@ public class MathGameController : MonoBehaviour
             correctAnswer = a + b;
             fakeAnswer = Random.Range(-10, 10);
             questionText.text = $"{a} + {b} = {fakeAnswer}";
+            correctButton.GetComponentInChildren<TextMeshProUGUI>().text = correctAnswer.ToString();
+            wrongButton.GetComponentInChildren<TextMeshProUGUI>().text = fakeAnswer.ToString();
         }
         else
         {
             correctAnswer = a - b;
             fakeAnswer = Random.Range(-10, 10);
             questionText.text = $"{a} - {b} = {fakeAnswer}";
+            correctButton.GetComponentInChildren<TextMeshProUGUI>().text = correctAnswer.ToString();
+            wrongButton.GetComponentInChildren<TextMeshProUGUI>().text = fakeAnswer.ToString();
         }
     }
 
@@ -73,7 +77,6 @@ public class MathGameController : MonoBehaviour
             }
         }
     }
-
 
     public void RestartGame()
     {
